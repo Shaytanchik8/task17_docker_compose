@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  nginx:
+    image: shaytanchik/nginx-image
+    container_name: test-container
+    ports:
+      - '443:443'
+      - '80:80'
+    depends_on:
+      - apache
+    networks:
+      - task14
+  apache:
+    image: shaytanchik/apache-image
+    container_name: test-containerA
+    ports:
+      - '8080:8080'
+    networks:
+      - task14
+networks:
+  task14:
+    name: task14
+    driver: bridge
