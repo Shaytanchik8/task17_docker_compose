@@ -11,7 +11,7 @@ services:
     networks:
       - task14
   apache:
-    image: shaytanchik/apache-image:
+    image: shaytanchik/apache-image
     container_name: test-containerA
     ports:
       - '8080:8080'
